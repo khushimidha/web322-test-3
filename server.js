@@ -8,10 +8,10 @@ const exphbs  = require('express-handlebars');
 
 // Configure PostgreSQL connection
 const pool = new pg.Pool({
-    user: 'krhypwqm',
-    host: 'suleiman.db.elephantsql.com',
-    database: 'krhypwqm',
-    password: '0s9wUh-JU1SkxoXswFTv_zGYlicaX2Pp',
+    user: 'your-db-username',
+    host: 'your-db-host',
+    database: 'your-db-name',
+    password: 'your-db-password',
     port: 5432
 });
 
@@ -65,39 +65,38 @@ app.get('/update-user', (req, res) => {
 
 // Update user data in database
 app.post('/update-user', (req, res) => {
-    const id = req.body.id;
-    const name = req.body.name;
-    const email = req.body.email;
-  
-    // Update user data in database
-    const result = pool.query(
-    'UPDATE users SET name = $1, email = $2 WHERE id = $3',
-    [name, email,id],
+    /*---------------------------------------
+    [TODO] Please complete the implementation
+    to be able to update users in PostgreSQL.
+    Receving three parameters id, name and email
 
-    (error) => {
-        if (error) {
-            console.log(error); res.status(500).json({ message: 'Error Updating data into PostgreSQL' });
-        } else {
-            res.redirect("/");
-        }
-    });
+    Using the query:
+    "UPDATE users SET name = $1, email = $2 WHERE id = $3"
 
+    If Failed: Return status code 500 and JSON message:
+    {message: "Error Updating data into PostgreSQL"}
+
+    If succeed:
+    Redirect to root of the website.
+    ----------------------------------------*/
   });
 
 // Delete user data in database
 app.get('/delete-user', (req, res) => {
-    const id = req.query.id;
-    // Delete user data from database
-    const result = pool.query(
-    'DELETE FROM users WHERE id = $1',
-    [id],
-    (error) => {
-        if (error) {
-            console.log(error); res.status(500).json({ message: 'Error Delete data from PostgreSQL' });
-        } else {
-            res.redirect("/");
-        }
-    });
+    /*---------------------------------------
+    [TODO] Please complete the implementation
+    to be able to delete users in PostgreSQL.
+    Receving on paramter id
+
+    Using the query:
+    "DELETE FROM users WHERE id = $1"
+
+    If Failed: Return status code 500 and JSON message:
+    {message: "Error Delete data from PostgreSQL"}
+
+    If succeed:
+    Redirect to root of the website.
+    ----------------------------------------*/
 
   });
 

@@ -13,5 +13,13 @@
   "main": "server.js",
   "author": "Matin Maleki",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matmaleki/web322-users.git"
+  },
+  "bugs": {
+    "url": "https://github.com/matmaleki/web322-users/issues"
+  },
+  "homepage": "https://github.com/matmaleki/web322-users#readme",
   "description": ""
 }
